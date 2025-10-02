@@ -9,11 +9,19 @@ body {
 
 /* ===== КОНТЕЙНЕР СТРАНИЦЫ ===== */
 .page-container {
-    max-width: 1200px; /* Максимальная ширина контента */
-    margin: 0 auto; /* Центрирование контейнера по горизонтали */
-    background: white; /* Белый фон для основного содержимого */
-    min-height: 100vh; /* Минимальная высота равна высоте окна браузера */
-    box-shadow: 0 0 30px rgba(0,0,0,0.1); /* Легкая тень вокруг всего контента */
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    min-height: 100vh;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    /* Новое: Сеточный макет для семантических областей */
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+"header"
+"nav"
+"main"
+"footer";
 }
 
 /* ===== ШАПКА ===== */
@@ -25,12 +33,14 @@ body {
     font-size: 28px; /* Размер шрифта */
     font-weight: 300; /* Легкое начертание шрифта */
     letter-spacing: 2px; /* Расстояние между буквами */
+    grid-area: header;
 }
 
 /* ===== НАВИГАЦИЯ ===== */
 .nav {
     background: #2c3e50; /* Темно-синий фон навигации */
     padding: 20px 0; /* Вертикальные отступы */
+    grid-area: nav;
 }
 
 .nav-list {
@@ -56,16 +66,17 @@ body {
 }
 
 .nav-link:hover {
-    background: rgba(255,255,255,0.1); /* Полупрозрачный белый фон при наведении */
+    background: rgba(255, 255, 255, 0.1); /* Полупрозрачный белый фон при наведении */
     transform: translateY(-2px); /* Легкое поднятие элемента при наведении */
 }
 
 /* ===== ОСНОВНОЙ КОНТЕНТ ===== */
-.content {
+main.content {
     flex: 1;
     padding: 40px; /* Внутренние отступы контента */
     max-width: 900px; /* Максимальная ширина контента */
     margin: 0 auto; /* Центрирование контента */
+    grid-area: main;
 }
 
 /* ===== ГЛАВНАЯ СТРАНИЦА ===== */
@@ -115,12 +126,11 @@ body {
 }
 
 /* ===== НАВЫКИ ===== */
-.skills-container {
-    display: flex; /* Горизонтальное расположение навыков */
-    justify-content: center; /* Выравнивание по центру */
-    flex-wrap: wrap; /* Перенос на новую строку при необходимости */
-    gap: 15px; /* Расстояние между навыками */
-    margin: 30px 0; /* Вертикальные отступы */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
 }
 
 .skill-tag {
@@ -144,6 +154,12 @@ body {
     margin-top: 50px; /* Отступ сверху */
 }
 
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
 .section-title {
     font-size: 28px; /* Размер шрифта заголовка секции */
     color: #2c3e50; /* Темно-синий цвет текста */
@@ -157,7 +173,7 @@ body {
     padding: 25px; /* Внутренние отступы */
     margin: 20px 0; /* Вертикальные отступы */
     border-radius: 12px; /* Скругленные углы */
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* Легкая тень */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); /* Легкая тень */
     border-left: 4px solid #667eea; /* Синяя полоса слева */
     transition: transform 0.3s ease; /* Плавная анимация трансформации */
 }
@@ -208,11 +224,11 @@ body {
 }
 
 .lol_profile-photo {
-    width: 1100px; /* Фиксированная ширина фото */
-    height: 3000px; /* Фиксированная высота фото */
+    /*width: 400px; !* Фиксированная ширина фото *!*/
+    /*height: 3000px; !* Фиксированная высота фото *!*/
     border-radius: 15px; /* Скругленные углы фото */
-    object-fit: cover; /* Обрезка фото для сохранения пропорций */
-    margin: 20px auto; /* Центрирование и отступы */
+    /*object-fit: cover; !* Обрезка фото для сохранения пропорций *!*/
+    /*margin: 20px; !* Центрирование и отступы *!*/
     border: 4px solid #667eea; /* Синяя рамка вокруг фото */
     box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3); /* Тень с синим оттенком */
 }
@@ -226,5 +242,172 @@ body {
     padding: 30px; /* Внутренние отступы */
     margin-top: 50px; /* Отступ сверху */
     align-content: end;
+    grid-area: footer;
+}
 
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    main.content {
+        padding: 20px;
+    }
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+    animation: fadeIn 0.3s ease;
+}
+
+dialog {
+    border: none;
+    border-radius: 12px;
+    padding: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease;
+    max-width: 500px;
+    width: 90vw;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px 12px 0 0;
+    margin: 0;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.modal-content {
+    padding: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: #f8f9fa;
+    color: #2c3e50;
+    border: 2px solid #e9ecef;
+}
+
+.btn-secondary:hover {
+    background: #e9ecef;
+}
+
+.required {
+    color: #e74c3c;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    dialog {
+        margin: 1rem;
+        width: calc(100vw - 2rem);
+    }
+
+
+    .modal-actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
 }
