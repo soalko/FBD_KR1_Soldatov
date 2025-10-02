@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c266845-98b0-4518-a7c3-d211e24f7954" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/contacts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/goods.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/goods.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/poshalko.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/poshalko.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/practices.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/practices.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +66,7 @@
       <recent name="$PROJECT_DIR$/bogdan.png" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html">
+  <component name="RunManager" selected="JavaScript Debug.practices.html">
     <configuration name="goods.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/FBD_KR1_Soldatov/pages/goods.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -85,8 +81,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="JavaScript Debug.practices.html" />
+        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="JavaScript Debug.news.html" />
         <item itemvalue="JavaScript Debug.goods.html" />
       </list>
@@ -108,7 +104,7 @@
       <updated>1758781331644</updated>
       <workItem from="1758781332664" duration="10050000" />
       <workItem from="1759304574903" duration="3000" />
-      <workItem from="1759386861877" duration="3260000" />
+      <workItem from="1759386861877" duration="4416000" />
     </task>
     <servers />
   </component>
